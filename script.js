@@ -488,7 +488,7 @@ const postsData = [
 ];
 
 // --------------------------------------------
-// دوال العرض (نفس الكود مع تحسينات بسيطة)
+// دوال العرض
 // --------------------------------------------
 const mainEl = document.getElementById('main-content');
 
@@ -554,7 +554,9 @@ window.addEventListener('popstate', function(event) {
     }
 });
 
-// قراءة المسار المحفوظ من 404.html عند تحميل الصفحة
+// --------------------------------------------
+// حل مشكلة تحديث الصفحة (الـ 404) - الكود الجديد
+// --------------------------------------------
 (function() {
     var savedPath = sessionStorage.getItem('redirect-path');
     if (savedPath) {
@@ -566,3 +568,5 @@ window.addEventListener('popstate', function(event) {
         }
     }
 })();
+
+window.onload = loadInitialPage;
