@@ -557,16 +557,5 @@ window.addEventListener('popstate', function(event) {
 // --------------------------------------------
 // حل مشكلة تحديث الصفحة (الـ 404) - الكود الجديد
 // --------------------------------------------
-(function() {
-    var savedPath = sessionStorage.getItem('redirect-path');
-    if (savedPath) {
-        // مسح المسار من الذاكرة لمنع تكرار التوجيه
-        sessionStorage.removeItem('redirect-path');
-        // إذا كان هناك مسار محفوظ، نوجه المتصفح إليه
-        if (savedPath && savedPath !== '') {
-            window.location.search = savedPath;
-        }
-    }
-})();
 
 window.onload = loadInitialPage;
