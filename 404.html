@@ -3,17 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جاري التوجيه...</title>
+    <title>Redirecting...</title>
     <script>
-        // 1. حفظ المسار المطلوب (مثلاً: ?post=1)
-        sessionStorage.setItem('redirect-path', window.location.search + window.location.hash);
-
-        // 2. التوجيه إلى الصفحة الرئيسية للمستودع
-        // window.location.pathname يعطي مثلاً: /sport-blog/
-        window.location.href = window.location.pathname;
+        var search = window.location.search;
+        var hash = window.location.hash;
+        window.location.href = './' + search + hash;
     </script>
 </head>
 <body>
-    <p>جاري التوجيه إلى المدونة...</p>
+    <p>Redirecting to the blog...</p>
 </body>
 </html>
