@@ -554,4 +554,16 @@ window.addEventListener('popstate', function(event) {
     }
 });
 
+// قراءة المسار المحفوظ من 404.html عند تحميل الصفحة
+(function() {
+    var savedPath = sessionStorage.getItem('redirect-path');
+    if (savedPath) {
+        // مسح المسار من الذاكرة لمنع تكرار التوجيه
+        sessionStorage.removeItem('redirect-path');
+        // إذا كان هناك مسار محفوظ، نوجه المتصفح إليه
+        if (savedPath && savedPath !== '') {
+            window.location.search = savedPath;
+        }
+    }
+})();
 window.onload = loadInitialPage;
