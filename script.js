@@ -566,4 +566,3 @@ window.addEventListener('popstate', function(event) {
         }
     }
 })();
-window.onload = loadInitialPage;
