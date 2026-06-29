@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
+    <title>جاري التوجيه...</title>
     <script>
-        // هذا الكود يأخذ المسار الحالي (مثل ?post=1) ويعيد توجيهك إلى الصفحة الرئيسية لنفس المستودع
-        var path = window.location.pathname;
-        var search = window.location.search;
-        // نأخذ اسم المستودع من المسار (مثلاً /sport-blog/) ونضيف إليه علامة الاستفهام
-        var repo = path.substring(0, path.lastIndexOf('/') + 1);
-        window.location.href = repo + search;
+        // 1. حفظ المسار المطلوب (مثلاً: ?post=1)
+        sessionStorage.setItem('redirect-path', window.location.search + window.location.hash);
+
+        // 2. التوجيه إلى الصفحة الرئيسية للمستودع
+        // window.location.pathname يعطي مثلاً: /sport-blog/
+        window.location.href = window.location.pathname;
     </script>
 </head>
 <body>
-    <p>Redirecting to the blog...</p>
+    <p>جاري التوجيه إلى المدونة...</p>
 </body>
 </html>
