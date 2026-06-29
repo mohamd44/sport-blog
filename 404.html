@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
     <script>
-        // الحل السحري: يأخذ المسار الحالي ويعيد التوجيه إلى الصفحة الرئيسية مع الاحتفاظ بعلامة الاستفهام (مثل ?post=1)
+        // هذا الكود يأخذ المسار الحالي (مثل ?post=1) ويعيد توجيهك إلى الصفحة الرئيسية لنفس المستودع
+        var path = window.location.pathname;
         var search = window.location.search;
-        var hash = window.location.hash;
-        window.location.href = './' + search + hash;
+        // نأخذ اسم المستودع من المسار (مثلاً /sport-blog/) ونضيف إليه علامة الاستفهام
+        var repo = path.substring(0, path.lastIndexOf('/') + 1);
+        window.location.href = repo + search;
     </script>
 </head>
 <body>
